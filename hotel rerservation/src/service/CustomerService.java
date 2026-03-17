@@ -13,11 +13,25 @@ public class CustomerService {
     // static reference (Singleton pattern)
     private static CustomerService instance = new CustomerService();
 
+    private CustomerService() {}
     public static CustomerService getInstance() {
         return instance;
     }
 
+
+    private boolean isCustomerExists(String email) {
+        return customers.containsKey(email);
+    }
+
+
+
     public void addCustomer(String email, String firstName, String lastName) {
+
+        if(isCustomerExists(email)){
+            System.out.println("Customer already exists.");
+            return;
+        }
+
         Customer customer = new Customer(firstName, lastName, email);
         customers.put(email, customer);
     }

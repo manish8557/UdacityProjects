@@ -4,11 +4,11 @@ import java.util.regex.Pattern;
 
 public class Customer {
 
-    private String firstName;
-    private String lastName;
-    private String email;
+    private final String firstName;
+    private final String lastName;
+    private final String email;
 
-    private static final String EMAIL_REGEX = "^[A-Za-z0-9+_.-]+@(.+)$";
+    private final static String EMAIL_REGEX = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$";
 
     public Customer(String firstName, String lastName, String email) {
 
@@ -21,7 +21,7 @@ public class Customer {
         this.email = email;
     }
 
-    public String getEmail() {
+    public final String getEmail() {
         return email;
     }
 

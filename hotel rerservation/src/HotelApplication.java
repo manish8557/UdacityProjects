@@ -8,5 +8,5 @@ public class HotelApplication {
         // Start the main menu
         ui.MainMenu.mainMenu();
     }
-
 }
+
